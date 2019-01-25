@@ -7,11 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name = "Company")
-@Table(name = "company")
+@Entity
+//@Table
 public class Company {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
     @Column
@@ -60,6 +61,17 @@ public class Company {
 
     public Short getStatus() {
         return status;
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", size=" + size +
+                ", code='" + code + '\'' +
+                ", status=" + status +
+                '}';
     }
 
     public void setStatus(Short status) {

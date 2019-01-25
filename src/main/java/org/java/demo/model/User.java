@@ -1,9 +1,13 @@
 package org.java.demo.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
-@Entity(name = "User")
-@Table(name = "user")
+
+@Entity
+//@Table
 public class User {
     @Id
     @Column(name = "user_id")
@@ -14,7 +18,12 @@ public class User {
     private int companyId;
 
     @Column
+    @NotNull
     private String name;
+
+    @Column
+    @Min(1)
+    private int age;
 
     @Column
     private String address;
@@ -23,6 +32,7 @@ public class User {
     private String email;
 
     @Column
+    @Size(min = 8, max = 15)
     private String phone;
 
     @Column
@@ -60,6 +70,10 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getAge() { return age; }
+
+    public void setAge(int age) { this.age = age; }
 
     public String getAddress() {
         return address;
@@ -118,4 +132,20 @@ public class User {
     }
 
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", companyId=" + companyId +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", gender='" + gender + '\'' +
+                ", account='" + account + '\'' +
+                ", department='" + department + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }

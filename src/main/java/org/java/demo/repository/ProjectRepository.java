@@ -4,6 +4,7 @@ import org.java.demo.model.Project;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

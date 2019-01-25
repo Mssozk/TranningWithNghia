@@ -2,8 +2,8 @@ package org.java.demo.model;
 
 import javax.persistence.*;
 
-@Entity(name = "Project")
-@Table(name = "project")
+@Entity
+//@Table
 public class Project {
 
     @Id

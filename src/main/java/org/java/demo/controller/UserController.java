@@ -27,13 +27,13 @@ public class UserController {
     }
 
     @DeleteMapping
-    public String deleteUser(@RequestBody int id) {
+    public String deleteUser(@RequestParam int id) {
         userService.deleteUserById(id);
         return  "User deleted";
     }
 
     @GetMapping
-    public User findUser(@RequestBody int id) {
+    public User findUser(@RequestParam int id) {
     User value = null;
     try {
         value = userService.findUserById(id);
