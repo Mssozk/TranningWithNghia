@@ -1,0 +1,1 @@
+ALTER TABLE user CHANGE acount account varchar(255);
