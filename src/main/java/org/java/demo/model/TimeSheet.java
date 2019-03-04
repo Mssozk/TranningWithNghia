@@ -5,7 +5,8 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 
 @Entity
-public class Timesheet {
+public class TimeSheet {
+
 
     @EmbeddedId
     private TimeSheetID timeSheetID;
@@ -38,5 +39,15 @@ public class Timesheet {
 
     public void setValue(Float value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Ozaki to string TimeSheet{" +
+                "id=" + timeSheetID + '\'' +
+                ", date=" + date + '\'' +
+                ", value=" + value + '\'' +
+                '}';
+
     }
 }

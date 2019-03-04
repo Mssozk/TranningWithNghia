@@ -1,7 +1,7 @@
 package org.java.demo.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
@@ -18,7 +18,7 @@ public class User {
     private int companyId;
 
     @Column
-    @NotNull
+    @NotBlank
     private String name;
 
     @Column
@@ -138,7 +138,6 @@ public class User {
                 "id=" + id +
                 ", companyId=" + companyId +
                 ", name='" + name + '\'' +
-                ", age='" + age + '\'' +
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
@@ -146,6 +145,7 @@ public class User {
                 ", account='" + account + '\'' +
                 ", department='" + department + '\'' +
                 ", status=" + status +
+                ", age='" + age + '\'' +
                 '}';
     }
 }

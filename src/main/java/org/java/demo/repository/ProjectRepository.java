@@ -27,7 +27,7 @@ public class ProjectRepository extends SimpleJpaRepository<Project, Integer> {
     }
 
     public Project findById(int id) {
-        Query q = em.createNativeQuery("SELECT * FROM project WHERE id LIKE :variableName", Project.class)
+        Query q = em.createNativeQuery("SELECT * FROM project WHERE project_id LIKE :variableName", Project.class)
                 .setParameter("variableName", id);
         return (Project) q.getSingleResult();
     }

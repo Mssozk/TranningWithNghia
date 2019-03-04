@@ -20,13 +20,13 @@ public class UserRepository extends SimpleJpaRepository<User, Integer> {
     }
 
     public int deleteById(int id) {
-        Query q = em.createNativeQuery("UPDATE user SET status = '1' WHERE id = :variableName", User.class)
+        Query q = em.createNativeQuery("UPDATE user SET status = '1' WHERE user_id = :variableName", User.class)
                 .setParameter("variableName", id);
         return q.executeUpdate();
     }
 
     public User findById(int id) {
-        Query q = em.createNativeQuery("SELECT * FROM user WHERE id LIKE :variableName", User.class)
+        Query q = em.createNativeQuery("SELECT * FROM user WHERE user_id LIKE :variableName", User.class)
                 .setParameter("variableName", id);
         return (User) q.getSingleResult();
     }
